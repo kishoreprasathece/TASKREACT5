@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer class="fo1 bg-gray-800 text-white p-6">
+            <footer class="bg-black grid grid-cols-4 text-white p-6">
     <div class="mb-6">
         <h4 class="text-lg font-bold mb-2">SUPPORT</h4>
         <p>Mon - Sat | 9:00 AM to 9:00 PM (EST)</p>
@@ -20,7 +20,7 @@ const Footer = () => {
         </ul>
     </div>
 
-    <div id="bu" class="mb-6">
+    <div class="mb-6">
         <p class="text-lg font-bold mb-2">INFORMATION</p>
         <ul>
             <li class="mb-1">Shipping Policy</li>
@@ -30,7 +30,7 @@ const Footer = () => {
         </ul>
     </div>
 
-    <div id="bu" class="mb-6">
+    <div class="mb-6">
         <p class="text-lg font-bold mb-2">SOCIAL MEDIA</p>
         <ul class="flex space-x-4">
             <li>
@@ -48,7 +48,7 @@ const Footer = () => {
     </div>
 </footer>
 
-<footer class="fo2 bg-gray-900 text-white text-center py-4">
+<footer class=" bg-black text-white text-center py-4">
     <p>© 2024 How Of Alpha.</p>
 </footer>
 

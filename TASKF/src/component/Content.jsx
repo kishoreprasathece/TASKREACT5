@@ -22,14 +22,14 @@ useEffect(() => {
 
     return (
         <div>
-            {error ? (<p>error :{error}</p>) : ( <ul>
+            {error ? (<p>error :{error}</p>) : ( <ul className='grid grid-cols-4 mx-20 my-12 gap-4 '  >
 {data.map(item=>(
     <li key={item.id} >
 <div>
-    <h1>{item.title}</h1>
-    <img src={item.image} alt={item.title} width="120" />
-    <p>{item.price}</p>
-    <button>add to cart</button>
+    <h1 className=' font-rig text-indigo-400'  >{item.title}</h1>
+    <img className='my-4' src={item.image} alt={item.title} width="120" />
+   <p className='text-xl my-2'>Price: ${item.price}</p>
+    <button className='bg-orange-300 p-2 my-3 gap-2 rounded' >add to cart</button>
 </div>
 </li>
           ))}
