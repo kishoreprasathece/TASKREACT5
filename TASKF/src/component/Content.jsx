@@ -2,15 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Footer from './Footer';
 
+const Content = ({ cart, setCart }) => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
 
-
-const Content = () => {
-
-const [data , setData] = useState([]);
-const [error , setError]= useState(null);
-
-
-useEffect(() => {
+  useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
         setData(response.data);
@@ -20,24 +16,40 @@ useEffect(() => {
       });
   }, []);
 
-    return (
-        <div>
-            {error ? (<p>error :{error}</p>) : ( <ul className='grid grid-cols-4 mx-20 my-12 gap-4 '  >
-{data.map(item=>(
-    <li key={item.id} >
-<div>
-    <h1 className=' font-rig text-indigo-400'  >{item.title}</h1>
-    <img className='my-4' src={item.image} alt={item.title} width="120" />
-   <p className='text-xl my-2'>Price: ${item.price}</p>
-    <button className='bg-orange-300 p-2 my-3 gap-2 rounded' >add to cart</button>
-</div>
-</li>
+  const addToCart = (item) => {
+    const isItemInCart = cart.find(product => product.id === item.id);
+    
+    if (!isItemInCart) {
+      setCart([...cart, item]);
+    } else {
+      alert("Item already added to the cart");
+    }
+  };
+
+  return (
+    <div className="bg-teal-100">
+      {error ? (
+        <p>Error: {error}</p>
+      ) : (
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5  mx-4 bg-white ">
+          {data.map(item => (
+            <li key={item.id} className="p-4 border rounded shadow">
+              <h1 className="font-bold truncate text-indigo-400">{item.title}</h1>
+              <img className="my-4" src={item.image} alt={item.title} width="120" />
+              <p className="text-xl my-2">Price: ${item.price}</p>
+              <button
+                className="bg-orange-500 p-2 my-3 rounded"
+                onClick={() => addToCart(item)}
+              >
+                Add to Cart
+              </button>
+            </li>
           ))}
         </ul>
       )}
- <Footer/>
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default Content;
