@@ -34,7 +34,7 @@ const Content = ({ cart, setCart }) => {
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5  mx-8 bg-teal-200 ">
           {data.map(item => (
             <li key={item.id} className="p-4 border rounded shadow-black">
-              <h1 className="font-bold truncate text-purple-500">{item.title}</h1>
+              <h1 className="font-bold truncate font-rig text-black">{item.title}</h1>
               <img className="my-4" src={item.image} alt={item.title} width="120" />
               <p className="text-xl my-2">Price: ${item.price}</p>
               <button
