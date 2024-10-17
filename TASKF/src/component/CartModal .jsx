@@ -15,7 +15,8 @@ const CartModal = ({ cart, setCart, setModalOpen }) => {
           <ul>
             {cart.map(item => (
               <li key={item.id} className="flex justify-between items-center py-2">
-                <span>{item.title}</span>
+                <span className='line-clamp-2' >{item.title}</span>
+                <img className="my-4" src={item.image} alt={item.title} width="60" />
                 <button
                   className="bg-red-500 text-white px-2 py-1 rounded"
                   onClick={() => removeFromCart(item.id)}

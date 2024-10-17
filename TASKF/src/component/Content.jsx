@@ -27,18 +27,18 @@ const Content = ({ cart, setCart }) => {
   };
 
   return (
-    <div className="bg-teal-100">
+    <div className="bg-teal-200">
       {error ? (
         <p>Error: {error}</p>
       ) : (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5  mx-4 bg-white ">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5  mx-8 bg-teal-200 ">
           {data.map(item => (
-            <li key={item.id} className="p-4 border rounded shadow">
-              <h1 className="font-bold truncate text-indigo-400">{item.title}</h1>
+            <li key={item.id} className="p-4 border rounded shadow-black">
+              <h1 className="font-bold truncate text-purple-500">{item.title}</h1>
               <img className="my-4" src={item.image} alt={item.title} width="120" />
               <p className="text-xl my-2">Price: ${item.price}</p>
               <button
-                className="bg-orange-500 p-2 my-3 rounded"
+                className="bg-yellow-400 p-2 my-3 rounded"
                 onClick={() => addToCart(item)}
               >
                 Add to Cart
