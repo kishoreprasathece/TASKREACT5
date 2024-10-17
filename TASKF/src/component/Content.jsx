@@ -31,7 +31,7 @@ const Content = ({ cart, setCart }) => {
       {error ? (
         <p>Error: {error}</p>
       ) : (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5  mx-8 bg-teal-200 ">
+        <ul className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 space-y-3 mx-8 bg-teal-200 ">
           {data.map(item => (
             <li key={item.id} className="p-4 border rounded shadow-black">
               <h1 className="font-bold truncate font-rig text-black">{item.title}</h1>
